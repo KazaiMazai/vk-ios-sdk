@@ -22,14 +22,17 @@
 
 #import "VKUser.h"
 
+@implementation VKLastSeen
+@end
 @implementation VKUser
-
 @end
 @implementation VKGeoObject
 @end
 @implementation VKCity
 @end
 @implementation VKCountry
+@end
+@implementation VKExports
 @end
 
 @implementation VKUsersArray

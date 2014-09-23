@@ -78,11 +78,9 @@ static inline BOOL VKStateTransitionIsValid(VKOperationState fromState, VKOperat
 
 @interface VKOperation ()
 
-@property (nonatomic, assign, getter = isCancelled) BOOL cancelled;
+@property (readwrite, nonatomic, assign, getter = isCancelled) BOOL wasCancelled;
 @end
 @implementation VKOperation
-
-@synthesize cancelled = _cancelled;
 
 - (id)init {
 	self = [super init];
@@ -124,7 +122,7 @@ static inline BOOL VKStateTransitionIsValid(VKOperationState fromState, VKOperat
 
 - (void)cancel {
 	[self willChangeValueForKey:@"isCancelled"];
-	_cancelled = YES;
+	_wasCancelled = YES;
 	[super cancel];
 	[self didChangeValueForKey:@"isCancelled"];
 }
